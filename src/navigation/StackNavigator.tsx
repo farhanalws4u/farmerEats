@@ -3,9 +3,8 @@ import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
 import Onboarding from '../screens/onboarding/Onboarding';
 import {StackNavigatorParamsList} from './navigation.types';
-import OnboardingOne from '../screens/onboardingOne/OnboardingOne';
-import OnboardingTwo from '../screens/onboardingTwo/OnboardingTwo';
-
+import Login from '../screens/login/Login';
+import SignUp from '../screens/signUp/SignUp';
 const MainStack = createStackNavigator<StackNavigatorParamsList>();
 
 const StackNavigator = () => {
@@ -14,8 +13,8 @@ const StackNavigator = () => {
       initialRouteName="Onboarding"
       screenOptions={{headerShown: false}}>
       <MainStack.Screen name="Onboarding" component={Onboarding} />
-      <MainStack.Screen name="OnboardingOne" component={OnboardingOne} />
-      <MainStack.Screen name="OnboardingTwo" component={OnboardingTwo} />
+      <MainStack.Screen name="Login" component={Login} />
+      <MainStack.Screen name="SignUp" component={SignUp} />
     </MainStack.Navigator>
   );
 };
