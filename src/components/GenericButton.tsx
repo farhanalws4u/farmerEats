@@ -12,7 +12,7 @@ type IProps = {
   onPress: () => void;
   buttonStyles?: any;
   title: String;
-  containerStyles: any;
+  containerStyles?: any;
 };
 
 const pixelRatio = PixelRatio.get();

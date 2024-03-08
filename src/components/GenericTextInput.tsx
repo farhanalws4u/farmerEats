@@ -1,18 +1,13 @@
 import React from 'react';
-import {
-  View,
-  TextInput,
-  StyleSheet,
-  Image,
-  ImageSourcePropType,
-} from 'react-native';
+import {View, TextInput, StyleSheet, ViewStyle} from 'react-native';
 
 interface Props {
-  type: 'text' | 'email' | 'password' | 'phone';
+  type: 'text' | 'email' | 'phone';
   placeholder: string;
   value: string;
   onChangeText: (text: string) => void;
   Icon: React.ComponentType<any>;
+  containerStyles?: ViewStyle;
 }
 
 const GenericTextInput: React.FC<Props> = ({
@@ -21,17 +16,17 @@ const GenericTextInput: React.FC<Props> = ({
   value,
   onChangeText,
   Icon,
+  containerStyles,
 }) => {
   return (
     <>
-      <View style={styles.inputContainer}>
+      <View style={{...styles.inputContainer, ...containerStyles}}>
         {Icon && <Icon style={styles.icon} />}
         <TextInput
           style={styles.input}
           placeholder={placeholder}
           value={value}
           onChangeText={onChangeText}
-          secureTextEntry={type === 'password'}
           keyboardType={
             type === 'email'
               ? 'email-address'
@@ -49,16 +44,21 @@ const styles = StyleSheet.create({
   inputContainer: {
     flexDirection: 'row',
     alignItems: 'center',
-    borderBottomWidth: 1,
-    borderColor: '#ccc',
-    marginBottom: 20,
-    paddingBottom: 5,
+    width: 330,
+    borderRadius: 8,
+    backgroundColor: '#261c1214',
+    paddingHorizontal: 16,
   },
   input: {
     flex: 1,
-    height: 40,
-    paddingLeft: 10,
-    fontSize: 16,
+    height: 48,
+    width: 330,
+    fontSize: 14,
+    borderRadius: 8,
+    fontWeight: '400',
+    lineHeight: 20,
+    marginLeft: 10,
+    color: '#000',
   },
   icon: {width: 15, height: 15},
 });

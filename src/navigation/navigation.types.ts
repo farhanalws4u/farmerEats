@@ -6,6 +6,9 @@ export type StackNavigatorParamsList = {
   Onboarding: undefined;
   Login: undefined;
   SignUp: undefined;
+  ForgotPassword: undefined;
+  VerifyOtp: undefined;
+  ResetPassword: undefined;
 };
 
 // Onboarding types
@@ -33,4 +36,34 @@ export type SignUpScreenNavigationProp = StackNavigationProp<
 export type SignUpScreenRouteProp = RouteProp<
   StackNavigatorParamsList,
   'SignUp'
+>;
+
+// ForgotPassword
+export type ForgotPasswordScreenNavigationProp = StackNavigationProp<
+  StackNavigatorParamsList,
+  'ForgotPassword'
+>;
+export type ForgotPasswordScreenRouteProp = RouteProp<
+  StackNavigatorParamsList,
+  'ForgotPassword'
+>;
+
+// VerifyOtp
+export type VerifyOtpScreenNavigationProp = StackNavigationProp<
+  StackNavigatorParamsList,
+  'VerifyOtp'
+>;
+export type VerifyOtpScreenRouteProp = RouteProp<
+  StackNavigatorParamsList,
+  'VerifyOtp'
+>;
+
+// ResetPassword
+export type ResetPasswordScreenNavigationProp = StackNavigationProp<
+  StackNavigatorParamsList,
+  'ResetPassword'
+>;
+export type ResetPasswordScreenRouteProp = RouteProp<
+  StackNavigatorParamsList,
+  'ResetPassword'
 >;

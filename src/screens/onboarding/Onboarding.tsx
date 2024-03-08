@@ -4,7 +4,6 @@ import {
   StatusBar,
   useColorScheme,
   View,
-  Image,
   Dimensions,
   StyleSheet,
   TouchableOpacity,
@@ -14,6 +13,9 @@ import {StackNavigationProp} from '@react-navigation/stack';
 import {RouteProp} from '@react-navigation/native';
 import {StackNavigatorParamsList} from '../../navigation/navigation.types';
 import GenericButton from '../../components/GenericButton';
+import BannerOne from '../../assets/images/onboardingOneBanner.svg';
+import BannerTwo from '../../assets/images/onboardingTwoBanner.svg';
+import BannerThree from '../../assets/images/onboardingThreeBanner.svg';
 
 interface IProps {
   navigation: StackNavigationProp<StackNavigatorParamsList, 'Onboarding'>;
@@ -54,12 +56,6 @@ const Onboarding: React.FC<IProps> = ({navigation}) => {
     },
   ];
 
-  const banners: {[key: string]: any} = {
-    onboardingOne: require('../../assets/images/onboardingOneBanner.svg'),
-    onboardingTwo: require('../../assets/images/onboardingTwoBanner.svg'),
-    onboardingThree: require('../../assets/images/onboardingThreeBanner.svg'),
-  };
-
   const [activeData, setActiveData] = useState(renderData[0]);
 
   const handleChangeRenderData = () => {
@@ -75,10 +71,13 @@ const Onboarding: React.FC<IProps> = ({navigation}) => {
       <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
       <View style={{...styles.container, backgroundColor: activeData.bgColor}}>
         <View style={styles.banner_section}>
-          <Image
-            style={styles.banner_img}
-            source={banners[activeData.banner]}
-          />
+          {activeData.id === 1 ? (
+            <BannerOne />
+          ) : activeData.id === 2 ? (
+            <BannerTwo />
+          ) : (
+            <BannerThree />
+          )}
         </View>
         <View style={styles.button_section}>
           <Text style={styles.button_section_heading}>{activeData.title}</Text>
