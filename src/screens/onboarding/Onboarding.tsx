@@ -139,17 +139,17 @@ const styles = StyleSheet.create({
   },
   button_section_heading: {
     fontSize: 24,
-    fontWeight: '700',
     color: '#000',
     textAlign: 'center',
+    fontFamily: 'BeVietnamProBold',
   },
   button_section_description: {
     marginTop: 40,
     textAlign: 'center',
     color: '#261C12',
     fontSize: 14,
-    fontWeight: '400',
     lineHeight: 20,
+    fontFamily: 'BeVietnamProRegular',
   },
   button: {
     paddingVertical: 17,
@@ -165,10 +165,12 @@ const styles = StyleSheet.create({
   loginBtn: {
     marginTop: 16,
     textDecorationLine: 'underline',
+    fontFamily: 'BeVietnamProRegular',
   },
   loginBtnText: {
     textDecorationLine: 'underline',
     color: '#261C12',
+    fontFamily: 'BeVietnamProRegular',
   },
   paginationSection: {
     marginTop: 27,

@@ -41,6 +41,7 @@ const styles = StyleSheet.create({
     color: '#ffffff',
     fontSize: 18,
     textAlign: 'center',
+    fontFamily: 'BeVietnamProRegular',
   },
   container: {
     width: '100%',

@@ -1,12 +1,12 @@
-import React from 'react';
-
-import {SafeAreaView, StatusBar, useColorScheme} from 'react-native';
+import React, {useEffect} from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import StackNavigator from './src/navigation/StackNavigator';
+import SplashScreen from 'react-native-splash-screen';
 
 function App(): React.JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
-
+  useEffect(() => {
+    SplashScreen.hide();
+  }, []);
   return (
     <NavigationContainer>
       <StackNavigator />

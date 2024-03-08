@@ -55,10 +55,10 @@ const styles = StyleSheet.create({
     width: 330,
     fontSize: 14,
     borderRadius: 8,
-    fontWeight: '400',
     lineHeight: 20,
     marginLeft: 10,
     color: '#000',
+    fontFamily: 'BeVietnamProRegular',
   },
   icon: {width: 15, height: 15},
 });

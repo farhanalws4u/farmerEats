@@ -88,16 +88,16 @@ const styles = StyleSheet.create({
   logoTitle: {
     fontSize: 16,
     lineHeight: 23,
-    fontWeight: '400',
     color: '#000',
     marginTop: 1,
+    fontFamily: 'BeVietnamProRegular',
   },
   welcomeText: {
     color: '#000',
     fontSize: 32,
-    fontWeight: '700',
     lineHeight: 46,
     marginTop: 90,
+    fontFamily: 'BeVietnamProBold',
   },
   signUpContainer: {
     marginTop: 24,
@@ -105,16 +105,16 @@ const styles = StyleSheet.create({
   },
   createText: {
     fontSize: 14,
-    fontWeight: '500',
     lineHeight: 20,
     color: '#D5715B',
+    fontFamily: 'BeVietnamProMedium',
   },
   newText: {
     fontSize: 14,
-    fontWeight: '500',
     lineHeight: 20,
     color: '#000',
     opacity: 0.3,
+    fontFamily: 'BeVietnamProMedium',
   },
   formContainer: {
     marginTop: 72,
