@@ -9,6 +9,7 @@ export type StackNavigatorParamsList = {
   ForgotPassword: undefined;
   VerifyOtp: undefined;
   ResetPassword: undefined;
+  FarmInfo: undefined;
 };
 
 // Onboarding types
@@ -66,4 +67,14 @@ export type ResetPasswordScreenNavigationProp = StackNavigationProp<
 export type ResetPasswordScreenRouteProp = RouteProp<
   StackNavigatorParamsList,
   'ResetPassword'
+>;
+
+// FarmInfo
+export type FarmInfoScreenNavigationProp = StackNavigationProp<
+  StackNavigatorParamsList,
+  'FarmInfo'
+>;
+export type FarmInfoScreenRouteProp = RouteProp<
+  StackNavigatorParamsList,
+  'FarmInfo'
 >;

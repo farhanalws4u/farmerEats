@@ -8,6 +8,7 @@ import SignUp from '../screens/signUp/SignUp';
 import ForgotPassword from '../screens/forgotPassword/ForgotPassword';
 import VerifyOtp from '../screens/VerifyOTP/VerifyOtp';
 import ResetPassword from '../screens/ResetPassword/ResetPassword';
+import FarmInfo from '../screens/signUp/FarmInfo';
 const MainStack = createStackNavigator<StackNavigatorParamsList>();
 
 const StackNavigator = () => {
@@ -21,6 +22,7 @@ const StackNavigator = () => {
       <MainStack.Screen name="ForgotPassword" component={ForgotPassword} />
       <MainStack.Screen name="VerifyOtp" component={VerifyOtp} />
       <MainStack.Screen name="ResetPassword" component={ResetPassword} />
+      <MainStack.Screen name="FarmInfo" component={FarmInfo} />
     </MainStack.Navigator>
   );
 };

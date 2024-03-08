@@ -14,20 +14,20 @@ import {StackNavigatorParamsList} from '../../navigation/navigation.types';
 import {RouteProp} from '@react-navigation/core';
 import GenericPasswordInput from '../../components/GenericPasswordInput';
 import GenericTextInput from '../../components/GenericTextInput';
-import GoogleLogo from '../../assets/images/googleLogo.svg';
-import AppleLogo from '../../assets/images/appleLogo.svg';
-import FacebookLogo from '../../assets/images/facebookLogo.svg';
-import EmailIcon from '../../assets/images/emailIcon.svg';
-import PersonIcon from '../../assets/images/personIcon.svg';
-import PhoneIcon from '../../assets/images/phoneIcon.svg';
+import SmileyIcon from '../../assets/images/smileyIcon.svg';
+import LocationIcon from '../../assets/images/locationIcon.svg';
+import HomeIcon from '../../assets/images/homeIcon.svg';
+import TagIcon from '../../assets/images/tagIcon.svg';
+import LeftArrowIcon from '../../assets/images/leftArrowIcon.svg';
 import GenericButton from '../../components/GenericButton';
+import GenericSelectInput from '../../components/GenericSelectInput';
 
 interface IProps {
-  navigation: StackNavigationProp<StackNavigatorParamsList, 'SignUp'>;
-  route: RouteProp<StackNavigatorParamsList, 'SignUp'>;
+  navigation: StackNavigationProp<StackNavigatorParamsList, 'FarmInfo'>;
+  route: RouteProp<StackNavigatorParamsList, 'FarmInfo'>;
 }
 
-const SignUp: React.FC<IProps> = ({navigation}) => {
+const FarmInfo: React.FC<IProps> = ({navigation}) => {
   const isDarkMode = useColorScheme() === 'dark';
   const [formData, setFormData] = useState({
     email: '',
@@ -40,73 +40,108 @@ const SignUp: React.FC<IProps> = ({navigation}) => {
       [key]: value,
     }));
   };
+  const states = [
+    'Andhra Pradesh',
+    'Arunachal Pradesh',
+    'Assam',
+    'Bihar',
+    'Chhattisgarh',
+    'Goa',
+    'Gujarat',
+    'Haryana',
+    'Himachal Pradesh',
+    'Jharkhand',
+    'Karnataka',
+    'Kerala',
+    'Madhya Pradesh',
+    'Maharashtra',
+    'Manipur',
+    'Meghalaya',
+    'Mizoram',
+    'Nagaland',
+    'Odisha',
+    'Punjab',
+    'Rajasthan',
+    'Sikkim',
+    'Tamil Nadu',
+    'Telangana',
+    'Tripura',
+    'Uttar Pradesh',
+    'Uttarakhand',
+    'West Bengal',
+    'Andaman and Nicobar Islands',
+    'Chandigarh',
+    'Dadra and Nagar Haveli',
+    'Daman and Diu',
+    'Delhi',
+    'Lakshadweep',
+    'Puducherry',
+  ];
+
   return (
     <SafeAreaView>
       <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
       <ScrollView>
         <View style={styles.container}>
           <Text style={styles.logoTitle}>FarmerEats</Text>
-          <Text style={styles.stepsText}>Signup 1 of 4</Text>
-          <Text style={styles.welcomeText}>Welcome!</Text>
-          <View style={styles.socialBtnContainer}>
-            <TouchableOpacity style={styles.socialIconWrapper}>
-              <GoogleLogo style={styles.socialLogo} />
-            </TouchableOpacity>
-            <TouchableOpacity style={styles.socialIconWrapper}>
-              <AppleLogo style={styles.socialLogo} />
-            </TouchableOpacity>
-            <TouchableOpacity style={styles.socialIconWrapper}>
-              <FacebookLogo style={styles.socialLogo} />
-            </TouchableOpacity>
-          </View>
-          <Text style={styles.orText}>or login with</Text>
+          <Text style={styles.stepsText}>Signup 2 of 4</Text>
+          <Text style={styles.welcomeText}>Farm Info</Text>
           <View style={styles.formContainer}>
             <GenericTextInput
               type="text"
-              placeholder="Full Name"
+              placeholder="Business Name"
               value={formData.email}
               onChangeText={(text: string) => handleChangeInput('email', text)}
-              Icon={PersonIcon}
+              Icon={TagIcon}
             />
             <GenericTextInput
-              type="email"
-              placeholder="Email Address"
+              type="text"
+              placeholder="Informal Name"
               value={formData.email}
               onChangeText={(text: string) => handleChangeInput('email', text)}
-              Icon={EmailIcon}
+              Icon={SmileyIcon}
               containerStyles={styles.input}
             />
             <GenericTextInput
-              type="phone"
-              placeholder="Phone Number"
+              type="text"
+              placeholder="Street Address"
               value={formData.email}
               onChangeText={(text: string) => handleChangeInput('email', text)}
-              Icon={PhoneIcon}
+              Icon={HomeIcon}
               containerStyles={styles.input}
             />
-            <GenericPasswordInput
-              placeholder="Password"
-              value={formData.password}
-              onChangeText={(text: string) =>
-                handleChangeInput('password', text)
-              }
+            <GenericTextInput
+              type="text"
+              placeholder="City"
+              value={formData.email}
+              onChangeText={(text: string) => handleChangeInput('email', text)}
+              Icon={LocationIcon}
               containerStyles={styles.input}
             />
-            <GenericPasswordInput
-              placeholder="Re-enter Password"
-              value={formData.password}
-              onChangeText={(text: string) =>
-                handleChangeInput('password', text)
-              }
-              containerStyles={styles.input}
-            />
+            <View style={styles.selectInputContainer}>
+              <GenericSelectInput
+                placeholder="State"
+                options={states}
+                onChangeText={() => console.log('select val')}
+                containerStyles={styles.selectInput}
+              />
+              <GenericTextInput
+                type="text"
+                placeholder="Enter Zipcode"
+                value={formData.email}
+                onChangeText={(text: string) =>
+                  handleChangeInput('email', text)
+                }
+                containerStyles={styles.zipCodeInput}
+              />
+            </View>
             <View style={styles.btnContainer}>
-              <TouchableOpacity onPress={() => navigation.navigate('Login')}>
-                <Text style={styles.loginBtnText}>Login</Text>
+              <TouchableOpacity onPress={() => navigation.goBack()}>
+                <LeftArrowIcon />
               </TouchableOpacity>
               <GenericButton
                 containerStyles={styles.loginBtn}
-                onPress={() => navigation.navigate('FarmInfo')}
+                onPress={() => {}}
                 title={'Continue'}
               />
             </View>
@@ -117,7 +152,7 @@ const SignUp: React.FC<IProps> = ({navigation}) => {
   );
 };
 
-export default SignUp;
+export default FarmInfo;
 
 const styles = StyleSheet.create({
   container: {
@@ -160,7 +195,7 @@ const styles = StyleSheet.create({
     width: 30,
   },
   formContainer: {
-    marginTop: 32,
+    marginTop: 40,
   },
   input: {
     marginTop: 24,
@@ -181,7 +216,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    marginTop: 82,
+    marginTop: 200,
   },
   loginBtnText: {
     textDecorationLine: 'underline',
@@ -194,5 +229,19 @@ const styles = StyleSheet.create({
     fontFamily: 'BeVietnamProMedium',
     opacity: 0.3,
     marginTop: 32,
+  },
+  selectInputContainer: {
+    marginTop: 24,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  },
+  selectInput: {
+    backgroundColor: '#d9d9d9f0',
+    width: 126,
+    height: 48,
+    borderRadius: 8,
+  },
+  zipCodeInput: {
+    width: 188,
   },
 });

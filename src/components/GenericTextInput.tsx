@@ -6,7 +6,7 @@ interface Props {
   placeholder: string;
   value: string;
   onChangeText: (text: string) => void;
-  Icon: React.ComponentType<any>;
+  Icon?: React.ComponentType<any>;
   containerStyles?: ViewStyle;
 }
 
